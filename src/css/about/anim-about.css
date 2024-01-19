@@ -1,1 +1,70 @@
-/*# sourceMappingURL=anim-about.css.map */
+:root {
+  --color-white: #fff;
+  --color-gray: #dadada;
+  --color-bg-white: #f3f3f3;
+  --color-bg-black: #252528;
+  --color-hamori: #7E62EC;
+  --color-hov-black: #48484b;
+  --color-hov-hamori: #8c77e1;
+  --font-size-xxs: 14px;
+  --font-size-xs: 14px;
+  --font-size-s: 16px;
+  --font-size-ms: 20px;
+  --font-size-m: 24px;
+  --font-size-ml: 32px;
+  --font-size-l: 40px;
+  --font-size-xl: 60px;
+  --font-size-xxl: 100px;
+  --font-family-ja: "Noto Sans JP", sans-serif;
+  --font-family-en: "Dela Gothic One", cursive;
+} 
+.anim-about__contents {
+  animation: slide-text 50s linear infinite 1.4s;
+}
+@keyframes slide-text {
+  0% {
+    transform: 0;
+  }
+  100% {
+    transform: translateX(-400%);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .anim-about__contents {
+    animation: slide-text 50s linear infinite 1.4s;
+  }
+  @keyframes slide-text {
+    0% {
+      transform: 0;
+    }
+    100% {
+      transform: translateX(-200%);
+    }
+  }
+}
+.anim-gray-out {
+  animation: gray-out 0.5s forwards;
+}
+@keyframes gray-out {
+  0% {
+    filter: grayscale(1);
+  }
+  100% {
+    filter: grayscale(0);
+  }
+}
+.anim-gray-in {
+  filter: grayscale(1);
+}
+.anim-contents__item {
+  animation: item_scaleUp 0.5s forwards;
+}
+@keyframes item_scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+    background-color: #c9c9c9;
+  }
+}/*# sourceMappingURL=anim-about.css.map */

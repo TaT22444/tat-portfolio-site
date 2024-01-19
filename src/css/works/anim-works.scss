@@ -1,0 +1,124 @@
+@use "../root/root.css";
+
+.anim{
+    &-top{
+        &__looptext{
+            animation: top_looptext 50s forwards linear infinite;
+            @keyframes top_looptext {
+                0%{
+                    transform: translateX(0);
+                }
+                100%{
+                    transform: translateX(-600%);
+                }
+            }
+
+            @media screen and (min-width:1024px) {
+                animation: top_looptext 50s forwards linear infinite;
+                @keyframes top_looptext {
+                    0%{
+                        transform: translateX(0);
+                    }
+                    100%{
+                        transform: translateX(-300%);
+                    }
+                }
+            }
+        }
+    }
+
+    &-duration-10{
+        animation-duration: 10s;
+    }
+    &-duration-30{
+        animation-duration: 30s;
+    }
+
+    &-change{
+        &-black{
+            animation: blac .4s forwards ease-in-out;
+            @keyframes blac {
+                0%{
+                    background-color: #f3f3f3;
+                }
+                100%{
+                    background-color: #252528;
+                }
+            }
+        }
+        &-white{
+            animation: whit .4s forwards;
+            @keyframes whit {
+                0%{                    
+                    background-color: #252528;
+                }
+                100%{
+                    background-color: #f3f3f3;
+                }
+            }
+        }
+    }
+
+    &-btn{
+        &-arrow{
+            &-showOver{
+                animation: arrowSO .3s forwards;
+                @keyframes arrowSO {
+                0%{
+                    transform: rotate(0)
+                }
+                100%{
+                    transform: rotate(90deg);
+                }
+            }
+            }
+            &-showLeave{
+                animation: arrowSL .3s forwards;
+                @keyframes arrowSL {
+                0%{
+                    transform: rotate(90deg)
+                }
+                100%{
+                    transform: rotate(0);
+                }
+            }
+            }
+            &-hideOver{
+                animation: arrowHO .3s forwards;
+                @keyframes arrowHO {
+                0%{
+                    transform: rotate(0)
+                }
+                100%{
+                    transform: rotate(-90deg);
+                }
+            }
+            }
+            &-hideLeave{
+                animation: arrowHL .3s forwards;
+                @keyframes arrowHL {
+                0%{
+                    transform: rotate(-90deg)
+                }
+                100%{
+                    transform: rotate(0);
+                }
+            }
+            }
+        }
+    }
+
+    &-list{
+        &-show{
+            animation: listS .3s forwards;
+            @keyframes listS {
+                0%{
+                    display: none;
+                }
+                100%{
+                    display: block;
+                }
+            }
+        }
+    }
+}

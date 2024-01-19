@@ -1,0 +1,69 @@
+@use "../root/root.css";
+
+.heading{
+    mix-blend-mode: difference;
+}
+
+.inner{
+    width: 100%;
+    padding: 0 4vw;
+    @media screen and (min-width:768px) {
+        padding: 0 4vw;
+    }
+
+    &--alert{
+        padding: 0 8vw;
+    }
+
+    &--header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        z-index: 99;
+        @media screen and (min-width:768px) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 140px;
+            z-index: 99;
+            // color: var(--color-white);
+        }
+    }
+
+    &--scrolldown{
+        // height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &--footer{
+        position: relative;
+        text-align: center;
+        padding: 80px 0;
+    }
+
+    &--hero{
+        overflow: hidden;
+        // max-width: 1140px;
+        margin-inline: auto;
+        height: 85vh;
+        min-height: 500px;
+        @media screen and (min-width:768px) {
+            padding: 0 ;
+        }
+    }
+
+    &--hamori-about{
+        padding: 0 8vw;
+        display: flex;
+        flex-direction: column;
+            @media screen and (min-width:768px) {
+            padding: 0 12vw;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

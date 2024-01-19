@@ -1,1 +1,253 @@
-/*# sourceMappingURL=anim-layout.css.map */
+:root {
+  --color-white: #fff;
+  --color-gray: #dadada;
+  --color-bg-white: #f3f3f3;
+  --color-bg-black: #252528;
+  --color-hamori: #7E62EC;
+  --color-hov-black: #48484b;
+  --color-hov-hamori: #8c77e1;
+  --font-size-xxs: 14px;
+  --font-size-xs: 14px;
+  --font-size-s: 16px;
+  --font-size-ms: 20px;
+  --font-size-m: 24px;
+  --font-size-ml: 32px;
+  --font-size-l: 40px;
+  --font-size-xl: 60px;
+  --font-size-xxl: 100px;
+  --font-family-ja: "Noto Sans JP", sans-serif;
+  --font-family-en: "Dela Gothic One", cursive;
+} 
+:root {
+  --color-white: #fff;
+  --color-gray: #dadada;
+  --color-bg-white: #f3f3f3;
+  --color-bg-black: #252528;
+  --color-hamori: #7E62EC;
+  --color-hov-black: #48484b;
+  --color-hov-hamori: #8c77e1;
+  --font-size-xxs: 14px;
+  --font-size-xs: 14px;
+  --font-size-s: 16px;
+  --font-size-ms: 20px;
+  --font-size-m: 24px;
+  --font-size-ml: 32px;
+  --font-size-l: 40px;
+  --font-size-xl: 60px;
+  --font-size-xxl: 100px;
+  --font-family-ja: "Noto Sans JP", sans-serif;
+  --font-family-en: "Dela Gothic One", cursive;
+}
+
+body {
+  background-color: var(--color-bg-black);
+  color: var(--color-white);
+  font-family: var(--font-family-en);
+}
+
+.header {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-items: center;
+  color: var(--color-bg-black);
+  background-color: var(--color-bg-white);
+  z-index: 99;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    color: var(--color-white);
+    background-color: transparent;
+    mix-blend-mode: difference;
+    z-index: 99;
+  }
+}
+.header-nav {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .header-nav {
+    display: block;
+  }
+}
+.header-nav__list {
+  display: flex;
+  justify-content: space-between;
+  -moz-column-gap: 24px;
+  column-gap: 24px;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.header-nav__link {
+  display: block;
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+.header-ham {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .header-ham {
+    display: none;
+  }
+}
+.header-ham__elem {
+  width: 24px;
+  height: 2px;
+  border-radius: 10px;
+  background-color: var(--color-bg-black);
+}
+
+.header-mordal {
+  padding: 120px 0 80px;
+  background-color: var(--color-bg-white);
+  z-index: 90;
+}
+
+.header-mordal__myname {
+  font-size: var(--font-size-ml);
+}
+
+.header-mordal__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 80px;
+}
+
+.header-mordal__item {
+  width: 100%;
+  display: block;
+  width: 100%;
+  transition: all 0.3s;
+  padding-bottom: 4px;
+}
+
+.header-mordal__item:hover {
+  border-bottom: 1px solid var(--color-bg-black);
+  transition: all 0.3s;
+}
+
+.header-mordal__sns-list {
+  display: flex;
+  gap: 24px;
+  justify-content: right;
+  padding-top: 40px;
+}
+
+.header__logo {
+  font-weight: bold;
+}
+
+main {
+  overflow-x: hidden;
+} 
+.ds-none {
+  display: none;
+}
+
+.ds-block {
+  animation: ds-block 0.2s forwards linear;
+}
+@keyframes ds-block {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
+
+.ds-out {
+  display: none;
+}
+
+.ds-in {
+  display: block;
+}
+
+.anim-ham__item1--rotate-0 {
+  animation: item1-rotate-0 0.2s forwards;
+}
+@keyframes item1-rotate-0 {
+  0% {
+    transform: translateY(10px) rotate(-45deg);
+  }
+  100% {
+    transform: 0;
+  }
+}
+.anim-ham__item1--rotate-45 {
+  animation: item1-rotate-45 0.2s forwards;
+}
+@keyframes item1-rotate-45 {
+  0% {
+    transform: 0;
+  }
+  100% {
+    transform: translateY(10px) rotate(-45deg);
+  }
+}
+.anim-ham__item2--op-0 {
+  animation: item2-op-0 0.1s forwards;
+}
+@keyframes item2-op-0 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.anim-ham__item2--op-1 {
+  animation: item2-op-1 0.2s forwards;
+}
+@keyframes item2-op-1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.anim-ham__item3--rotate-0 {
+  animation: item3-rotate-0 0.2s forwards;
+}
+@keyframes item3-rotate-0 {
+  0% {
+    transform: translateY(-6px) rotate(45deg);
+  }
+  100% {
+    transform: 0;
+  }
+}
+.anim-ham__item3--rotate-45 {
+  animation: item3-rotate-45 0.2s forwards;
+}
+@keyframes item3-rotate-45 {
+  0% {
+    transform: 0;
+  }
+  100% {
+    transform: translateY(-6px) rotate(45deg);
+  }
+}/*# sourceMappingURL=anim-layout.css.map */

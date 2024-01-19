@@ -1,0 +1,351 @@
+@use "../root/root.css";
+
+.ds-none{
+    display: none;
+}
+.alert-back-in{
+    display: block;
+    opacity: .8;
+}
+.ds-block{
+    animation: ds-block .2s forwards linear;
+    @keyframes ds-block {
+        0%{
+            opacity: 0;
+            display: none;
+        }
+        100%{
+            opacity: 1;
+            display: block;
+        }
+    }
+}
+
+.anim{
+    &-header{
+        opacity: 0;
+        animation: header-in .5s forwards .8s;
+        @keyframes header-in {
+            0%{
+                opacity: 0;
+                transform: translateY(-5%);
+            }
+            30%{
+                opacity: 1;
+                transform: translateY(-10%);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+
+    &-fadein{
+        &-scroll{
+            opacity: 0;
+            animation: scroll-in 5s forwards .8s;
+            @keyframes scroll-in {
+                0%{
+                    opacity: 0;
+                }
+                100%{
+                    opacity: .8;
+                }
+            }
+        }
+    }
+
+    &-scrolldown{
+        animation: scroll-down 1s forwards linear infinite .8s;
+        @keyframes scroll-down {
+            0%{
+                transform: rotate(180deg);
+                opacity: 0;
+                height: 0;
+            }
+            100%{
+                transform: rotate(180deg);
+                opacity: 1;
+                height: 20px;
+            }
+        }
+    }
+
+    &-hero{
+        &__title{
+            position: relative;
+            animation: hero-title .5s forwards .8s;
+        }
+        @keyframes hero-title {
+            0%{
+                opacity: 0;
+                transform: translateY(20%)
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        &__border{
+            position: relative;
+            animation: hero-border .6s forwards .3s;
+        }
+        @keyframes hero-border {
+            0%{
+                opacity: 0;
+                width: 0;
+            }
+            100%{
+                opacity: 1;
+                width: 100%;
+            }
+        }
+
+        &__subtitle{
+            position: relative;
+            animation: hero-subtitle .5s forwards .8s;
+        }
+        @keyframes hero-subtitle {
+            0%{
+                opacity: 0;
+                transform: translateY(-20%);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+}
+
+.mouseover-twi{
+    animation: in-twi .3s forwards ease-in;
+}
+@keyframes in-twi {
+    0%{
+        opacity: 0;
+        width: 0;
+    }
+    20%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        width: 50%;
+    }
+}
+.mouseleave-twi{
+    animation: out-twi .3s forwards ease-in;
+}
+@keyframes out-twi {
+    0%{
+        opacity: 1;
+        width: 50%;
+    }
+    20%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        width: 0;
+    }
+}
+
+.mouseover-insta{
+    animation: in-insta .3s forwards ease-in;
+}
+@keyframes in-insta {
+    0%{
+        opacity: 0;
+        width: 0;
+    }
+    20%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        width: 50%;
+    }
+}
+.mouseleave-insta{
+    animation: out-insta .3s forwards linear;
+}
+@keyframes out-insta {
+    0%{
+        opacity: 1;
+        width: 50%;
+    }
+    20%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        width: 0;
+    }
+}
+.in-rotate-insta{
+    animation: in-rotate-insta .3s forwards linear .1s;
+}
+@keyframes in-rotate-insta {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.out-rotate-insta{
+    animation: out-rotate-insta .3s forwards linear .1s;
+}
+@keyframes out-rotate-insta {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+
+.in-rotate-twi{
+    animation: in-rotate-twi .3s forwards linear .1s;
+}
+@keyframes in-rotate-twi {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+.out-rotate-twi{
+    animation: out-rotate-twi .3s forwards linear .1s;
+}
+@keyframes out-rotate-twi {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+.el-fig{
+    animation: el-fig .2s forwards linear ;
+}
+@keyframes el-fig {
+    0%{
+        background-color: #979797;
+    }
+    20%{
+        transform: scale(1.5);
+    }
+    100%{
+        background-color: #ff15f3;
+        transform: scale(1);
+    }
+}
+
+.el-ai{
+    animation: el-ai .2s forwards linear ;
+}
+@keyframes el-ai {
+    0%{
+        background-color: #979797;
+    }
+    20%{
+        transform: scale(1.5);
+    }
+    100%{
+        background-color: #ff9215;
+        transform: scale(1);
+    }
+}
+
+.el-ps{
+    animation: el-ps .2s forwards linear ;
+}
+@keyframes el-ps {
+    0%{
+        background-color: #979797;
+    }
+    20%{
+        transform: scale(1.5);
+    }
+    100%{
+        background-color: #15d0ff;
+        transform: scale(1);
+    }
+}
+
+.el-hc{
+    animation: el-hc .2s forwards linear ;
+}
+@keyframes el-hc {
+    0%{
+        background-color: #979797;
+    }
+    20%{
+        transform: scale(1.5);
+    }
+    100%{
+        background-color: #15ff5b;
+        transform: scale(1);
+    }
+}
+
+.el-js{
+    animation: el-js .2s forwards linear ;
+}
+@keyframes el-js {
+    0%{
+        background-color: #979797;
+    }
+    20%{
+        transform: scale(1.5);
+    }
+    100%{
+        background-color: #ffef15;
+        transform: scale(1);
+    }
+}
+
+.el-wp{
+    animation: el-wp .2s forwards linear ;
+}
+@keyframes el-wp {
+    0%{
+        background-color: #979797;
+    }
+    20%{
+        transform: scale(1.5);
+    }
+    100%{
+        background-color: #bd15ff;
+        transform: scale(1);
+    }
+}
+
+.el2{
+                animation-delay: .12s;
+            }
+            .el3{
+                animation-delay: .24s;
+            }
+            .el4{
+                animation-delay: .36s;
+            }
+         .el5{
+                animation-delay: .48s;
+            }
+         .el6{
+                animation-delay: .6s;
+            }
+         .el7{
+                animation-delay: .72s;
+            }
+         .el8{
+                animation-delay: .84s;
+            }

@@ -1,51 +1,298 @@
 ---
-interface Props {
-	title: string;
-}
+const {title} = Astro.props
+const { href } = Astro.props
+const nav = [
+    {
+        href: '/',
+        label: 'home'
+    },
+    {
+        href: '/about',
+        label: 'about'
+    },
+    {
+        href: '/works/hamori',
+        label: 'works'
+    },
+    {
+        href: '/blog',
+        label: 'blog'
+    },
+    {
+        href: '/contact',
+        label: 'contact'
+    }
+];
 
-const { title } = Astro.props;
+import Mordal_back from '../components/mordal-back.astro';
+// import '../css/top/style.css'
+import '../css/inner/inner.css'
+import '../css/root/root.css'
+import '../css/layouts/anim-layout.css'
+import '../css/layouts/layout.css'
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@600&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="src/css/inner/inner.css">
+	<link rel="stylesheet" href="src/css/root/root.css">
+	<title>{title}</title>
+</head>
+<body>
+	<Mordal_back/>
+	<header class="header" id="header">
+	    <div class="inner inner--header">
+			<h2 class="header__logo">
+				<a href={href}>{title}</a>
+			</h2><!--{title}-->
+			<nav class="header-nav">
+				<ul class="header-nav__list">
+					{nav.map((item)=>
+						<li class="header-nav__item"><a class:list="header-nav__link c-black" href={item.href}>{item.label}</a></li>
+					)}
+				</ul>
+			</nav>
+			<span class="header-ham" id="js-ham">
+				<span class="header-ham__elem" id="js-ham__item1"></span>
+				<span class="header-ham__elem" id="js-ham__item2"></span>
+				<span class="header-ham__elem" id="js-ham__item3"></span>
+			</span>
+        </div>
+
+		<div class="header-mordal ds-out" id="js-mordal">
+			<h2 class="header-mordal__myname inner">
+				Tatsuya Aihara
+			</h2>
+		    <ul class="header-mordal__list inner">
+				{nav.map((item)=>
+					<li class="header-mordal__item"><a class:list="header-mordal__link" href={item.href}>{item.label}</a></li>
+				)}
+			</ul>
+			<ul class="header-mordal__sns-list inner">
+				<li class="header-mordal__sns-item">
+					<a href="https://instagram.com/tatsu_aihara" class="header-mordal__sns-link">
+						<svg width="24" height="24" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M10.0002 0.333008H24.0002C29.3335 0.333008 33.6668 4.66634 33.6668 9.99967V23.9997C33.6668 26.5634 32.6484 29.0222 30.8355 30.835C29.0227 32.6479 26.5639 33.6663 24.0002 33.6663H10.0002C4.66683 33.6663 0.333496 29.333 0.333496 23.9997V9.99967C0.333496 7.43592 1.35195 4.97716 3.1648 3.16431C4.97765 1.35146 7.4364 0.333008 10.0002 0.333008ZM9.66683 3.66634C8.07553 3.66634 6.54941 4.29848 5.42419 5.4237C4.29897 6.54892 3.66683 8.07504 3.66683 9.66634V24.333C3.66683 27.6497 6.35016 30.333 9.66683 30.333H24.3335C25.9248 30.333 27.4509 29.7009 28.5761 28.5756C29.7014 27.4504 30.3335 25.9243 30.3335 24.333V9.66634C30.3335 6.34967 27.6502 3.66634 24.3335 3.66634H9.66683ZM25.7502 6.16634C26.3027 6.16634 26.8326 6.38583 27.2233 6.77654C27.614 7.16724 27.8335 7.69714 27.8335 8.24967C27.8335 8.80221 27.614 9.33211 27.2233 9.72281C26.8326 10.1135 26.3027 10.333 25.7502 10.333C25.1976 10.333 24.6677 10.1135 24.277 9.72281C23.8863 9.33211 23.6668 8.80221 23.6668 8.24967C23.6668 7.69714 23.8863 7.16724 24.277 6.77654C24.6677 6.38583 25.1976 6.16634 25.7502 6.16634ZM17.0002 8.66634C19.2103 8.66634 21.3299 9.54431 22.8927 11.1071C24.4555 12.6699 25.3335 14.7895 25.3335 16.9997C25.3335 19.2098 24.4555 21.3294 22.8927 22.8922C21.3299 24.455 19.2103 25.333 17.0002 25.333C14.79 25.333 12.6704 24.455 11.1076 22.8922C9.5448 21.3294 8.66683 19.2098 8.66683 16.9997C8.66683 14.7895 9.5448 12.6699 11.1076 11.1071C12.6704 9.54431 14.79 8.66634 17.0002 8.66634ZM17.0002 11.9997C15.6741 11.9997 14.4023 12.5265 13.4646 13.4641C12.5269 14.4018 12.0002 15.6736 12.0002 16.9997C12.0002 18.3258 12.5269 19.5975 13.4646 20.5352C14.4023 21.4729 15.6741 21.9997 17.0002 21.9997C18.3262 21.9997 19.598 21.4729 20.5357 20.5352C21.4734 19.5975 22.0002 18.3258 22.0002 16.9997C22.0002 15.6736 21.4734 14.4018 20.5357 13.4641C19.598 12.5265 18.3262 11.9997 17.0002 11.9997Z" fill="#252528"/>
+						</svg>
+					</a>
+				</li>
+				<li class="header-mordal__sns-item">
+					<a href="twitter:@tatsu_aihara" class="header-mordal__sns-link">
+						<svg width="24" height="24" viewBox="0 0 38 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.3332 0.333008H0.666504L14.4332 18.6897L1.4165 33.6663H5.83317L16.4798 21.418L25.6665 33.6663H37.3332L22.9865 14.5363L35.3332 0.333008H30.9165L20.9398 11.8097L12.3332 0.333008ZM27.3332 30.333L7.33317 3.66634H10.6665L30.6665 30.333H27.3332Z" fill="#252528"/>
+						</svg>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- <div class="header-mordal__back ds-none" id="js-mordal__back"></div> -->
+    </header>
+	<!-- <script type="module">
+		// Import the functions you need from the SDKs you need
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+		import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
+		// TODO: Add SDKs for Firebase products that you want to use
+		// https://firebase.google.com/docs/web/setup#available-libraries
+	  
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		const firebaseConfig = {
+		  apiKey: "AIzaSyAI4h0miq44kd5KkUpvWvf4xrOfPow9N3c",
+		  authDomain: "tat-portfolio-site.firebaseapp.com",
+		  projectId: "tat-portfolio-site",
+		  storageBucket: "tat-portfolio-site.appspot.com",
+		  messagingSenderId: "813243386204",
+		  appId: "1:813243386204:web:fe0a1bc0234883e2cd1999",
+		  measurementId: "G-ZY03HY8WZK"
+		};
+	  
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+		const analytics = getAnalytics(app);
+	  </script> -->
+</body>
+
+<!-- <script>
+	const ham = document.getElementById('js-ham')
+	const mordal = document.getElementById('js-mordal')
+	// const mordal_back = document.getElementById('js-mordal__back')
+	const ham_item1 = document.getElementById('js-ham__item1')
+    const ham_item2 = document.getElementById('js-ham__item2')
+    const ham_item3 = document.getElementById('js-ham__item3')
+	const mordal_back = document.getElementById('js-mordal-back')
+	ham.addEventListener('click', ()=>{
+		if (mordal.classList.contains('ds-out') === true) {
+			mordal.classList.remove('ds-out')
+            mordal.classList.add('ds-block')
+			mordal_back.classList.remove('ds-out')
+            mordal_back.classList.add('ds-in')
+			// mordal_back.classList.remove('ds-none')
+			// mordal_back.classList.add('ds-block')
+			ham_item1.classList.add('anim-ham__item1--rotate-45')
+			ham_item1.classList.remove('anim-ham__item1--rotate-0')
+		    ham_item2.classList.add('anim-ham__item2--op-0')
+			ham_item2.classList.remove('anim-ham__item2--op-1')
+		    ham_item3.classList.add('anim-ham__item3--rotate-45')
+			ham_item3.classList.remove('anim-ham__item3--rotate-0')
+		} else if (mordal.classList.contains('ds-block') === true) {
+			mordal.classList.add('ds-out')
+            mordal.classList.remove('ds-block')
+			mordal_back.classList.add('ds-out')
+            mordal_back.classList.remove('ds-in')
+			// mordal_back.classList.add('ds-none')
+			// mordal_back.classList.remove('ds-block')
+			ham_item1.classList.remove('anim-ham__item1--rotate-45')
+			ham_item1.classList.add('anim-ham__item1--rotate-0')
+		    ham_item2.classList.remove('anim-ham__item2--op-0')
+			ham_item2.classList.add('anim-ham__item2--op-1')
+		    ham_item3.classList.remove('anim-ham__item3--rotate-45')
+			ham_item3.classList.add('anim-ham__item3--rotate-0')
+		}
+		mordal_back.addEventListener('click', ()=>{
+			mordal.classList.add('ds-out')
+            mordal.classList.remove('ds-block')
+			mordal_back.classList.add('ds-out')
+            mordal_back.classList.remove('ds-in')
+			ham_item1.classList.remove('anim-ham__item1--rotate-45')
+			ham_item1.classList.add('anim-ham__item1--rotate-0')
+		    ham_item2.classList.remove('anim-ham__item2--op-0')
+			ham_item2.classList.add('anim-ham__item2--op-1')
+		    ham_item3.classList.remove('anim-ham__item3--rotate-45')
+			ham_item3.classList.add('anim-ham__item3--rotate-0')
+		})
+	})
+
+	window.addEventListener('scroll', ()=>{
+	document.querySelectorAll("#fig-elem").forEach((fig_elem)=>{
+		// console.log(fig_elem)
+		let fig_shadow = document.getElementById('js-shadow-fig')
+		if(fig_elem.getBoundingClientRect().top < 550){
+			fig_shadow.classList.add('skills__skillset__item-fig')
+			fig_elem.classList.add('el-fig')
+		}
+
+	    fig_shadow.addEventListener('mouseover', ()=>{
+            fig_shadow.classList.add('skills__skillset__item-hover-figover')
+            fig_shadow.classList.remove('skills__skillset__item-hover-figleave')
+            fig_shadow.classList.remove('skills__skillset__item-fig')
+            fig_elem.classList.remove('el-fig')
+        })
+        fig_shadow.addEventListener('mouseleave', ()=>{
+            fig_shadow.classList.remove('skills__skillset__item-hover-figover')
+            fig_shadow.classList.add('skills__skillset__item-hover-figleave')
+            fig_elem.classList.add('el-fig')
+        })
+	})
+	document.querySelectorAll("#ai-elem").forEach((ai_elem)=>{
+		// console.log(ai_elem)
+		let ai_shadow = document.getElementById('js-shadow-ai')
+		if(ai_elem.getBoundingClientRect().top < 550){
+			ai_shadow.classList.add('skills__skillset__item-ai')
+			ai_elem.classList.add('el-ai')
+		}
+
+	    ai_shadow.addEventListener('mouseover', ()=>{
+            ai_shadow.classList.add('skills__skillset__item-hover-aiover')
+            ai_shadow.classList.remove('skills__skillset__item-hover-aileave')
+            ai_shadow.classList.remove('skills__skillset__item-ai')
+            ai_elem.classList.remove('el-ai')
+        })
+        ai_shadow.addEventListener('mouseleave', ()=>{
+            ai_shadow.classList.remove('skills__skillset__item-hover-aiover')
+            ai_shadow.classList.add('skills__skillset__item-hover-aileave')
+            ai_elem.classList.add('el-ai')
+        })
+	})
+	document.querySelectorAll("#ps-elem").forEach((ps_elem)=>{
+		// console.log(ps_elem)
+		let ps_shadow = document.getElementById('js-shadow-ps')
+		if(ps_elem.getBoundingClientRect().top < 550){
+			ps_shadow.classList.add('skills__skillset__item-ps')
+			ps_elem.classList.add('el-ps')
+		}
+
+	    ps_shadow.addEventListener('mouseover', ()=>{
+            ps_shadow.classList.add('skills__skillset__item-hover-psover')
+            ps_shadow.classList.remove('skills__skillset__item-hover-psleave')
+            ps_shadow.classList.remove('skills__skillset__item-ps')
+            ps_elem.classList.remove('el-ps')
+        })
+        ps_shadow.addEventListener('mouseleave', ()=>{
+            ps_shadow.classList.remove('skills__skillset__item-hover-psover')
+            ps_shadow.classList.add('skills__skillset__item-hover-psleave')
+            ps_elem.classList.add('el-ps')
+        })
+	})
+	document.querySelectorAll("#hc-elem").forEach((hc_elem)=>{
+		// console.log(hc_elem)
+		let hc_shadow = document.getElementById('js-shadow-hc')
+		if(hc_elem.getBoundingClientRect().top < 550){
+			hc_shadow.classList.add('skills__skillset__item-hc')
+			hc_elem.classList.add('el-hc')
+		}
+
+	    hc_shadow.addEventListener('mouseover', ()=>{
+            hc_shadow.classList.add('skills__skillset__item-hover-hcover')
+            hc_shadow.classList.remove('skills__skillset__item-hover-hcleave')
+            hc_shadow.classList.remove('skills__skillset__item-hc')
+            hc_elem.classList.remove('el-hc')
+        })
+        hc_shadow.addEventListener('mouseleave', ()=>{
+            hc_shadow.classList.remove('skills__skillset__item-hover-hcover')
+            hc_shadow.classList.add('skills__skillset__item-hover-hcleave')
+            hc_elem.classList.add('el-hc')
+        })
+	})
+	document.querySelectorAll("#js-elem").forEach((js_elem)=>{
+		// console.log(js_elem)
+		let js_shadow = document.getElementById('js-shadow-js')
+		if(js_elem.getBoundingClientRect().top < 550){
+			js_shadow.classList.add('skills__skillset__item-js')
+			js_elem.classList.add('el-js')
+		}
+
+	    js_shadow.addEventListener('mouseover', ()=>{
+            js_shadow.classList.add('skills__skillset__item-hover-jsover')
+            js_shadow.classList.remove('skills__skillset__item-hover-jsleave')
+            js_shadow.classList.remove('skills__skillset__item-js')
+            js_elem.classList.remove('el-js')
+        })
+        js_shadow.addEventListener('mouseleave', ()=>{
+            js_shadow.classList.remove('skills__skillset__item-hover-jsover')
+            js_shadow.classList.add('skills__skillset__item-hover-jsleave')
+            js_elem.classList.add('el-js')
+        })
+	})
+	document.querySelectorAll("#wp-elem").forEach((wp_elem)=>{
+		// console.log(wp_elem)
+		let wp_shadow = document.getElementById('js-shadow-wp')
+		if(wp_elem.getBoundingClientRect().top < 550){
+			wp_shadow.classList.add('skills__skillset__item-wp')
+			wp_elem.classList.add('el-wp')
+		}
+
+	    wp_shadow.addEventListener('mouseover', ()=>{
+            wp_shadow.classList.add('skills__skillset__item-hover-wpover')
+            wp_shadow.classList.remove('skills__skillset__item-hover-wpleave')
+            wp_shadow.classList.remove('skills__skillset__item-wp')
+            wp_elem.classList.remove('el-wp')
+        })
+        wp_shadow.addEventListener('mouseleave', ()=>{
+            wp_shadow.classList.remove('skills__skillset__item-hover-wpover')
+            wp_shadow.classList.add('skills__skillset__item-hover-wpleave')
+            wp_elem.classList.add('el-wp')
+        })
+	})
+})
+</script> -->
+
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>

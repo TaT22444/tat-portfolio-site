@@ -1,1 +1,127 @@
-/*# sourceMappingURL=anim-works.css.map */
+:root {
+  --color-white: #fff;
+  --color-gray: #dadada;
+  --color-bg-white: #f3f3f3;
+  --color-bg-black: #252528;
+  --color-hamori: #7E62EC;
+  --color-hov-black: #48484b;
+  --color-hov-hamori: #8c77e1;
+  --font-size-xxs: 14px;
+  --font-size-xs: 14px;
+  --font-size-s: 16px;
+  --font-size-ms: 20px;
+  --font-size-m: 24px;
+  --font-size-ml: 32px;
+  --font-size-l: 40px;
+  --font-size-xl: 60px;
+  --font-size-xxl: 100px;
+  --font-family-ja: "Noto Sans JP", sans-serif;
+  --font-family-en: "Dela Gothic One", cursive;
+} 
+.anim-top__looptext {
+  animation: top_looptext 50s forwards linear infinite;
+}
+@keyframes top_looptext {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-600%);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .anim-top__looptext {
+    animation: top_looptext 50s forwards linear infinite;
+  }
+  @keyframes top_looptext {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-300%);
+    }
+  }
+}
+.anim-duration-10 {
+  animation-duration: 10s;
+}
+.anim-duration-30 {
+  animation-duration: 30s;
+}
+.anim-change-black {
+  animation: blac 0.4s forwards ease-in-out;
+}
+@keyframes blac {
+  0% {
+    background-color: #f3f3f3;
+  }
+  100% {
+    background-color: #252528;
+  }
+}
+.anim-change-white {
+  animation: whit 0.4s forwards;
+}
+@keyframes whit {
+  0% {
+    background-color: #252528;
+  }
+  100% {
+    background-color: #f3f3f3;
+  }
+}
+.anim-btn-arrow-showOver {
+  animation: arrowSO 0.3s forwards;
+}
+@keyframes arrowSO {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+.anim-btn-arrow-showLeave {
+  animation: arrowSL 0.3s forwards;
+}
+@keyframes arrowSL {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+.anim-btn-arrow-hideOver {
+  animation: arrowHO 0.3s forwards;
+}
+@keyframes arrowHO {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+.anim-btn-arrow-hideLeave {
+  animation: arrowHL 0.3s forwards;
+}
+@keyframes arrowHL {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+.anim-list-show {
+  animation: listS 0.3s forwards;
+}
+@keyframes listS {
+  0% {
+    display: none;
+  }
+  100% {
+    display: block;
+  }
+}/*# sourceMappingURL=anim-works.css.map */

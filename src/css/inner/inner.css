@@ -1,1 +1,86 @@
-/*# sourceMappingURL=inner.css.map */
+:root {
+  --color-white: #fff;
+  --color-gray: #dadada;
+  --color-bg-white: #f3f3f3;
+  --color-bg-black: #252528;
+  --color-hamori: #7E62EC;
+  --color-hov-black: #48484b;
+  --color-hov-hamori: #8c77e1;
+  --font-size-xxs: 14px;
+  --font-size-xs: 14px;
+  --font-size-s: 16px;
+  --font-size-ms: 20px;
+  --font-size-m: 24px;
+  --font-size-ml: 32px;
+  --font-size-l: 40px;
+  --font-size-xl: 60px;
+  --font-size-xxl: 100px;
+  --font-family-ja: "Noto Sans JP", sans-serif;
+  --font-family-en: "Dela Gothic One", cursive;
+} 
+.heading {
+  mix-blend-mode: difference;
+}
+
+.inner {
+  width: 100%;
+  padding: 0 4vw;
+}
+@media screen and (min-width: 768px) {
+  .inner {
+    padding: 0 4vw;
+  }
+}
+.inner--alert {
+  padding: 0 8vw;
+}
+.inner--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  z-index: 99;
+}
+@media screen and (min-width: 768px) {
+  .inner--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 140px;
+    z-index: 99;
+  }
+}
+.inner--scrolldown {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.inner--footer {
+  position: relative;
+  text-align: center;
+  padding: 80px 0;
+}
+.inner--hero {
+  overflow: hidden;
+  margin-inline: auto;
+  height: 85vh;
+  min-height: 500px;
+}
+@media screen and (min-width: 768px) {
+  .inner--hero {
+    padding: 0;
+  }
+}
+.inner--hamori-about {
+  padding: 0 8vw;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .inner--hamori-about {
+    padding: 0 12vw;
+    display: flex;
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=inner.css.map */

@@ -1,0 +1,60 @@
+@use "../root/root.css";
+
+.anim{
+    &-about{
+
+        &__contents{
+            animation: slide-text 50s linear infinite 1.4s;
+            @keyframes slide-text {
+                0%{
+                    transform: 0;
+                }
+                100%{
+                    transform: translateX(-400%);
+                }
+            }
+
+            @media screen and (min-width:1024px) {
+                animation: slide-text 50s linear infinite 1.4s;
+                @keyframes slide-text {
+                    0%{
+                        transform: 0;
+                    }
+                    100%{
+                        transform: translateX(-200%);
+                    }
+                }
+            }
+        }
+    }
+
+    &-gray{
+        &-out{
+            animation: gray-out .5s forwards;
+        }
+        @keyframes gray-out {
+            0%{
+                filter: grayscale(1);
+            }
+            100%{
+                filter: grayscale(0);
+            }
+        }
+        &-in{
+            filter: grayscale(1);
+        }
+    }
+
+    &-contents__item{
+        animation: item_scaleUp .5s forwards;
+        @keyframes item_scaleUp {
+            0%{
+                transform: scale(1);
+            }
+            100%{
+                transform: scale(1.2);
+                background-color: #c9c9c9;
+            }
+        }
+    }
+}

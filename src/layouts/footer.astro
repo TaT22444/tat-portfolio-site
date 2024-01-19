@@ -1,0 +1,41 @@
+---
+import '../css/top/style.css'
+import '../css/root/root.css'
+---
+
+<footer class="footer" id="footer">
+    <div class="inner inner--footer">
+        <small class="copy">&copy; 2023 Tatsuya Aihara</small>
+        <p class="footer__page-top" id="js-page-top">
+            page top
+        </p>
+    </div>
+</footer>
+
+<style lang="scss">
+    .footer{
+        width: 100%;
+        font-family: 'Noto Sans JP', sans-serif;
+        // background-color: var(--color-bg-black);
+        color: var(--color-white);
+        background-color: var(--color-bg-black);
+
+        &__page-top{
+            position: absolute;
+            right: 4vw;
+            bottom: 20px;
+            font-size: var(--font-size-xs);
+            cursor: pointer;
+        }
+    }
+</style>
+
+<!-- <script>
+    const page_top = document.getElementById('js-page-top')
+    page_top.addEventListener('click', ()=>{
+        window.scroll({
+            top: 0, 
+            behavior: "smooth"
+        })
+    })
+</script> -->
