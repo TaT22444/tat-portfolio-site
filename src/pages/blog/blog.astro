@@ -1,6 +1,6 @@
 ---
-// import { getBlogs} from '../library/microcms'
-// const response = await getBlogs({ fields: ["id", "title", "image", "media", "publishedAt"] })
+import { getBlogs} from '../../library/microcms'
+const response = await getBlogs({ fields: ["id", "title", "image", "media", "publishedAt"] })
 
 
 
@@ -15,14 +15,14 @@ import '../../css/blog/blog.css'
 
 <main>
 
-    <!-- <ul style="margin-top: 400px;">
+    <ul style="margin-top: 400px;">
         {response.contents.map((content => 
             <li style=" color: black;">
                 <a href={content.id}>{content.title}</a>
                 <time>{content.publishedAt.substring(0, 10)}</time>
             </li>
         ))}
-    </ul> -->
+    </ul>
 </main>
 
 <Footer />
