@@ -5,6 +5,16 @@ const client = createClient({
   apiKey: import.meta.env.MICROCMS_API_KEY,
 });
 
+export async function getStaticPaths() {
+    const response = await getBlogs({ fields: ["id"] });
+    return response.contents.map((content: any) => ({
+      params: {
+        blogId: content.id,
+      },
+    }));
+}
+  
+
 //型定義
 export type Blog = {
   id: string;
