@@ -1,0 +1,17 @@
+@use "../root/root.css";
+
+body{
+    background-color: var(--color-bg-white);
+    color: var(--color-bg-black);
+}
+
+li{
+    font-family: var(--font-family-ja);
+    font-size: var(--font-size-s);
+}
+
+// a{
+//     // display: block;
+//     // font-family: var(--font-family-ja);
+//     // font-size: 100px;
+// }

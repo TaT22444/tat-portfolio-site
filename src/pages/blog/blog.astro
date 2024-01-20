@@ -17,8 +17,8 @@ import '../../css/blog/blog.css'
 
     <ul style="margin-top: 400px;">
         {response.contents.map((content => 
-            <li style=" color: rgb(255, 255, 255);">
-                <a href={content.id}>{content.title}</a>
+            <li>
+                <a class="title" href={content.id}>{content.title}</a>
                 <time>{content.publishedAt.substring(0, 10)}</time>
             </li>
         ))}
